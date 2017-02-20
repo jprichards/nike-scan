@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.john.nike.scan</string>
+    <key>ProcessType</key>
+    <string>Background</string>
+    <key>Program</key>
+    <string>/Users/john/github/nike-scan/nike-scan.py</string>
+    <key>StandardOutPath</key>
+    <string>/Users/john/Desktop/nike-test.txt</string>
+    <key>StartInterval</key>
+    <integer>900</integer>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>

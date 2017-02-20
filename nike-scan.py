@@ -1,8 +1,9 @@
-#!/usr/bin/python
+#!/usr/local/bin/python
 
-import requests
 import bs4
+import requests
 import sqlite3
+import subprocess
 from time import localtime, strftime
 
 # CREATE TABLE IF NOT EXISTS "nikemediumtall" (
@@ -56,5 +57,17 @@ def main():
             add_product(conn,product)
 
 
+    print str(len(links)) + " products found"
+
+    cmd = ['/usr/local/bin/terminal-notifier', '-title',\
+           "Nike Scan", '-message', str(len(links)) + " products found"]
+    try:
+        proc = subprocess.Popen(
+            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, err = proc.communicate()
+        return output
+    except Exception:
+        return None
+        
 if __name__ == '__main__':
     main()
