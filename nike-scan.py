@@ -6,8 +6,8 @@ import sqlite3
 from time import localtime, strftime
 
 # CREATE TABLE IF NOT EXISTS "nikemediumtall" (
-#   "id" integer(128) PRIMARY KEY,
-#   "seen" text(128),
+#   "id" integer(16) PRIMARY KEY,
+#   "seen" text(64),
 #   "name" text(128),
 #   "link" text(256)
 # );
@@ -27,7 +27,7 @@ def add_product(conn, product):
     cur = conn.cursor()
     cur.execute(sql, product)
 
-def scan():
+def main():
     database = '/Users/john/github/nike-scan/medium-tall.sqlite'
     link = "http://store.nike.com/us/en_us/pw/mens-clothing/7j8Z1mdZ7puZpipZono"
 
@@ -55,9 +55,6 @@ def scan():
             product = (pid, seen, name, link)
             add_product(conn,product)
 
-
-def main():
-    scan()
 
 if __name__ == '__main__':
     main()
